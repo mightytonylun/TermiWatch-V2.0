@@ -25,7 +25,7 @@
 		<key>NSExtensionAttributes</key>
 		<dict>
 			<key>WKAppBundleIdentifier</key>
-			<string>com.kuglee.TermiWatch.watchkitapp</string>
+			<string>com.caoz.TermiWatch.watchkitapp</string>
 		</dict>
 		<key>NSExtensionPointIdentifier</key>
 		<string>com.apple.watchkit</string>
@@ -35,7 +35,7 @@
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Your location data will be used to display weather data. </string>
 	<key>OpenWeatherMapAPIKey</key>
-	<string>8d30dae09830ab2917caface6d6cf1c5</string>
+	<string>7a50241bcd95028607b60ff46502c08e</string>
 	<key>WKExtensionDelegateClassName</key>
 	<string>$(PRODUCT_MODULE_NAME).ExtensionDelegate</string>
 </dict>

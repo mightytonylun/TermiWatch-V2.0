@@ -74,10 +74,8 @@ func hideDefaultTimeLabelWatchOS7() {
 var hideTimeOnce: () -> Void = {
   if #available(watchOS 7, *) {
     hideDefaultTimeLabelWatchOS7()
-  } else if #available(watchOS 6, *) {
+  }else {
     hideDefaultTimeLabelWatchOS6()
-  } else {
-    hideDefaultTimeLabelWatchOS5()
   }
 
   return {}
@@ -196,7 +194,7 @@ class InterfaceController: WKInterfaceController {
       ) { [weak self] notification in
         let temperature = notification.object as! Measurement<UnitTemperature>
         self?.temperatureLabel.setText(
-          temperatureFormatter.string(from: temperature)
+          temperatureFormatter.string(from: temperature) + " " + weather_condition
         )
       }
 

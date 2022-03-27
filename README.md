@@ -1,3 +1,21 @@
+# TermiWatch for WatchOS8.5 and iOS15.4
+
+## New Features
+
+ 1. New iOS app page for monitoring the log
+ ![iOS](Screenshots/iOS.png)
+ 2. Fix Bug that cannot display temperature 
+ 3. Add Weather Support in Watch
+ ![watchOS](Screenshots/watchOS.png)
+ 4. Resolve the xcode13 error about remote dependencies by localizing the remote dependencies.
+ 5. Request Network permission upon starting
+ 6. New Weather Info API
+
+## Usage
+Please following the guidance from TermiWatch, notice that the `kuglee` has been changed to `caoz`.
+
+----
+
 # TermiWatch
 
 Terminal Watch Face for Apple Watch.

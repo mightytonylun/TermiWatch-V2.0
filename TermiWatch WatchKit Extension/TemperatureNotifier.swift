@@ -4,6 +4,8 @@ import PMKCoreLocation
 import PMKFoundation
 import PromiseKit
 
+public var weather_condition = "TESTW"
+
 func OpenWeatherMapAPIKey() -> String {
   return Bundle.main.object(
     forInfoDictionaryKey: "OpenWeatherMapAPIKey"
@@ -22,17 +24,22 @@ func OpenWeatherMapURL(
   )!
 }
 
+
 let disabledCachingConfig: (URLSessionConfiguration) -> Void = {
   $0.requestCachePolicy = .reloadIgnoringLocalCacheData
   $0.urlCache = nil
 }
 
 struct OpenWeatherMapResponse: Codable {
-  struct MainResponse: Codable {
-    let temp: Double
-  }
-
-  let main: MainResponse
+    let main: MainResponse
+    struct MainResponse: Codable {
+        let temp: Double
+    }
+    let weather: [Weather]
+    struct Weather: Codable{
+        let main: String
+        let description: String
+    }
 }
 
 func temperatureInKelvin(at coordinate: CLLocationCoordinate2D)
@@ -51,8 +58,10 @@ func temperatureInKelvin(at coordinate: CLLocationCoordinate2D)
         value: $0.main.temp,
         unit: UnitTemperature.kelvin
       )
-
       seal.fulfill(temperatureInKelvin)
+        /* Pass Weather Condition */
+//        print($0.weather[0].main)
+        weather_condition = $0.weather[0].main
     }.catch {
       print("Error:", $0)
     }
